@@ -1,0 +1,33 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.element {
+  border: 1px solid black;
+}
+
+.element-1 {
+  background: red;
+}
+
+.element-2 {
+  background: orange;
+}
+
+.element-3 {
+  background: yellow;
+}
+
+.element-4 {
+  background: green;
+}
+
+.element-5 {
+  background: blue;
+}
+
+.element-6 {
+  background: indigo;
+}
