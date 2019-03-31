@@ -1,15 +1,39 @@
+/*
+Syntax to include in parent element (.wrapper in this case):
+display: grid; (creates grid within parent element)
+grid-template-columns: 1fr 1fr 1fr; (sets the width of each column in the grid)
+grid-template-rows: 100px 100px 100px; (sets the height of each row in the grid)
+
+Grids can be however many rows and columns are needed. Just add more values to grid-template-columns and/or grid-template rows.
+Column widths and row heights can be defined in:
+absolute values (100px)
+relative values (1fr 2fr - creates two columns/rows that fill available space in a ratio of 1:2)
+automatic values (auto - column/row shrinks to fit content)
+*/
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 100px 100px 100px;
+  margin: 0 auto;
+  width: 50%;
 }
 
 .element {
-  border: 1px solid black;
+  border: 2px solid black;
 }
+
+/*
+For each child element of the parent element of the grid, you can specify where they should be placed on the grid with grid-column and grid-row. There are at least two syntaxes for the values of these properties.
+grid-column: 2 / 3; element extends from the second vertical line to the third
+grid-column: 2 / span 1; element starts from the second vertical line and spans one column
+The two examples above are interchangeable. Pick one and use it consistently.
+If you don't specify a position, the other elements will try to fill remaining cells in the grid from top left to bottom right.
+*/
 
 .element-1 {
   background: red;
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
 }
 
 .element-2 {
@@ -30,4 +54,8 @@
 
 .element-6 {
   background: indigo;
+}
+
+.element-7 {
+  background: violet;
 }
